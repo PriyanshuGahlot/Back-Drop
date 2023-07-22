@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+:root{
+    --gradient :linear-gradient(45deg,
+    #002233 20%,
+    rgb(89, 1, 79),
+    rgb(0, 21, 128));
+}
+.container{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-image: var(--gradient);
+    background-size: 300% 300%;
+    animation: bg-animation 25s ease alternate infinite;
+    justify-content: center;
+}
+@keyframes bg-animation{
+    0%{
+        background-position: left;
+    }
+    50%{
+        background-position: right;
+    }
+}
+.textContainer{
+    position: absolute;
+    text-align: center;
+    top: 20%;
+}
+#clock{
+    font-size: 62px;
+    font-weight: bold;
+}
+#day-date{
+    font-size: 24px;
+}
+.musicControls{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    bottom: 20%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    width: 600px;
+    height: 200px;
+}
+.title{
+    align-self: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    height: fit-content;
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: fit-content;
+}
+.buttons img{
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.buttons img:active{
+    transform: scale(0.9);
+}
